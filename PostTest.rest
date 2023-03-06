@@ -1,0 +1,84 @@
+GET http://localhost:8000/quiz
+
+###
+GET http://localhost:8000/question
+
+###
+GET http://localhost:8000/question/63f6468b5940f275dc149475
+
+###
+GET http://localhost:8000/question/on/63f645505940f275dc149472
+
+###
+GET http://localhost:8000/quiz/63f645505940f275dc149472
+
+###
+GET http://localhost:8000/quiz_history/
+
+###
+POST http://localhost:8000/quiz_history/
+Content-Type: application/json; charset=utf-8
+
+{
+    "quiz_id" : "63f645505940f275dc149472",
+    "username" : "Baihaqi",
+    "join_at" : "",
+    "answer" : {
+        "correct": 2,
+        "unCorrect": 0,
+        "detail": [1, 2, 3, 4]
+    },
+    "score" : 20
+}
+
+###
+POST http://localhost:8000/quiz
+Content-Type: application/json
+
+{
+    "quizName": "Quiz Bahasa Fisika Pemula",
+    "description": "Quiz ini membahas mengenai soal - soal fisika secara umum untuk tingkat 5 SD",
+    "score": 10,
+    "time": 15
+}
+
+###
+DELETE http://localhost:8000/quiz/63fc1899b934af07d188aada
+
+###
+PATCH http://localhost:8000/quiz/63fb9097654b0b0b92a1f7b8
+Content-Type: application/json
+
+{
+    "description": "Quiz ini membahas mengenai soal - soal yang bersifat umum",
+    "quizName": "Quiz Pengetahuan Umum",
+    "score": 10,
+    "time":10
+}
+
+###
+POST http://localhost:8000/quiz
+Content-Type: application/json
+
+{
+    "quizName": "Matematika Dasar",
+    "description": "Quiz ini membahas mengenai soal - soal Matematika Dasar",
+    "score": 10,
+    "time": 10
+}
+
+###
+POST http://localhost:8000/question
+Content-Type: application/json
+
+{
+    "quiz_id": "63fc4befb934af07d188b15e",
+    "question": "Berapa (-4 x 20) + 10?",
+    "answer": [
+        "60",
+        "70",
+        "80",
+        "100"
+    ],
+    "correct_answer": 1
+}
